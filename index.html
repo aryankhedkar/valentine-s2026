@@ -560,49 +560,55 @@
             justify-content: center;
         }
 
-        .photo-frame {
-            max-width: 480px;
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--border);
+        .photo-heart {
             position: relative;
+            width: clamp(280px, 50vw, 420px);
+            height: clamp(280px, 50vw, 420px);
         }
 
-        .photo-frame::before {
-            content: '';
+        .photo-heart-shape {
             position: absolute;
             inset: 0;
-            border-radius: 20px;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
-            z-index: 1;
-            pointer-events: none;
+            clip-path: path('M210 35c-35-50-105-50-140 0C35 85 35 155 210 280 385 155 385 85 350 35c-35-50-105-50-140 0z');
+            /* fallback for the clip-path using viewBox 0 0 420 300 scaled */
+        }
+
+        .photo-heart-border {
+            position: absolute;
+            inset: -6px;
+            width: calc(100% + 12px);
+            height: calc(100% + 12px);
+        }
+
+        .photo-heart-border svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .photo-frame {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
         }
 
         .photo-frame img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
             display: block;
-        }
-
-        .photo-caption {
-            text-align: center;
-            margin-top: 1.25rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            letter-spacing: 0.02em;
         }
 
         .photo-wrapper {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(20px) scale(0.95);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .photo-wrapper.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
         /* Animate on scroll */
@@ -639,8 +645,18 @@
     <!-- Photo -->
     <section class="photo-section">
         <div class="photo-wrapper">
-            <div class="photo-frame">
-                <img src="us.png" alt="Aryan and Sofia">
+            <div class="photo-heart">
+                <svg viewBox="0 0 420 380" style="position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M210 350C60 230 10 170 10 110C10 60 50 20 105 20C145 20 175 45 210 80C245 45 275 20 315 20C370 20 410 60 410 110C410 170 360 230 210 350Z" stroke="#dc2626" stroke-width="6" fill="none"/>
+                </svg>
+                <svg viewBox="0 0 420 380" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="heartClip">
+                            <path d="M210 345C65 228 15 168 15 112C15 63 53 23 105 23C143 23 173 47 210 82C247 47 277 23 315 23C367 23 405 63 405 112C405 168 355 228 210 345Z"/>
+                        </clipPath>
+                    </defs>
+                    <image href="us.png" x="0" y="-30" width="420" height="420" clip-path="url(#heartClip)" preserveAspectRatio="xMidYMin slice"/>
+                </svg>
             </div>
         </div>
     </section>
