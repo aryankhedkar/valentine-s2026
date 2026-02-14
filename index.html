@@ -519,6 +519,52 @@
             color: var(--text-muted);
         }
 
+        /* Fine Print */
+        .fine-print {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 2rem);
+        }
+
+        .fine-print-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .fine-print-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .fine-print-list li {
+            font-size: clamp(0.72rem, 1.8vw, 0.8rem);
+            color: var(--text-muted);
+            line-height: 1.7;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .fine-print-list li::before {
+            content: '*';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        .fine-print-footer {
+            font-size: clamp(0.65rem, 1.5vw, 0.72rem);
+            color: var(--text-muted);
+            opacity: 0.6;
+            font-style: italic;
+        }
+
         /* Mobile */
         @media (max-width: 640px) {
             .reasons-grid {
@@ -641,10 +687,10 @@
                 <p class="letter-greeting">Sofia,</p>
                 <div class="letter-body">
                     <p>A year ago today I married you. I'd do it again tomorrow and the day after that and every day after that. But honestly, I knew I was going to spend my life with you long before the wedding. I think I knew somewhere around the time I realised that no one else makes me laugh the way you do, no one else drives me as mad as you do, and no one else makes a random Tuesday evening feel like the best part of my week.</p>
-                    <p>You're the most chaotic person I've ever met and I mean that as the biggest compliment I can give. You bring energy into every room, you turn nothing plans into the best memories, and you somehow make even the most stressful days feel manageable just by being around. I don't know how you do it. I really don't. But I'm so glad you do.</p>
-                    <p>I love the mornings where we take the tube together to Kings Cross and I watch you disappear towards Holborn while I head to Farringdon, and for those few minutes on the platform I just think about how lucky I am that I get to go home to you later. It's such a small, ordinary thing. But it's my favourite part of the day and I don't think you even know that.</p>
-                    <p>You've made me a better person this year. More patient (still working on it), more present, more aware of what matters. You challenge me when I need it, you support me when I don't ask for it, and you love me in a way that I genuinely don't think I deserve but I'm going to spend the rest of my life trying to.</p>
-                    <p>Thank you for four incredible years. Thank you for saying yes three years ago. Thank you for marrying me last year. And thank you for being the reason I look forward to every single day.</p>
+                    <p>You're the most chaotic person I've ever met and I mean that as the biggest compliment I can give. You bring energy into every room, you turn nothing plans into the best memories, and you somehow make even the most stressful days feel manageable just by being around. I don't know how you do it. I really don't. But I'm so glad you do. (Even when your version of "being around" involves reorganising the entire flat at 11pm on a Wednesday.)</p>
+                    <p>I love the mornings where we take the tube together to Kings Cross and I watch you disappear towards Holborn while I head to Farringdon, and for those few minutes on the platform I just think about how lucky I am that I get to go home to you later. It's such a small, ordinary thing. But it's my favourite part of the day and I don't think you even know that. (Also you always walk too fast. I want you to know that.)</p>
+                    <p>You've made me a better person this year. More patient (still working on it), more present, more aware of what matters. You challenge me when I need it, you support me when I don't ask for it, and you love me in a way that I genuinely don't think I deserve but I'm going to spend the rest of my life trying to. You also steal the duvet every single night without fail, but I've decided to let that slide because the rest of you is pretty great.</p>
+                    <p>Thank you for four incredible years. Thank you for saying yes three years ago. Thank you for marrying me last year. And thank you for being the reason I look forward to every single day. Even the ones where you eat my leftovers.</p>
                 </div>
                 <p class="letter-closing">All my love, always. Aryan</p>
             </div>
@@ -662,7 +708,7 @@
                 <div class="timeline-item">
                     <div class="timeline-label">14 December 2021</div>
                     <div class="timeline-title">We met</div>
-                    <div class="timeline-desc">I didn't know it at the time, but this was the day that changed everything. Two months before Valentine's Day, and you walked into my life like you'd always been there. I haven't been the same since. I wouldn't want to be.</div>
+                    <div class="timeline-desc">I didn't know it at the time, but this was the day that changed everything. Two months before Valentine's Day, and you walked into my life like you'd always been there. I haven't been the same since. I wouldn't want to be. (My bank account hasn't been the same either, but that's a separate conversation.)</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-label">14 February 2022</div>
@@ -672,7 +718,7 @@
                 <div class="timeline-item">
                     <div class="timeline-label">14 February 2023</div>
                     <div class="timeline-title">I asked you to marry me</div>
-                    <div class="timeline-desc">One year in and I already knew I didn't want to do any of this without you. So I asked. And you said yes. I don't think I've ever felt relief and joy hit me at the same time like that before. Probably the best moment of my life up to that point.</div>
+                    <div class="timeline-desc">One year in and I already knew I didn't want to do any of this without you. So I asked. And you said yes. I don't think I've ever felt relief and joy hit me at the same time like that before. Probably the best moment of my life up to that point. (I had a whole speech planned. I forgot all of it. You said yes anyway.)</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-label">2023 to 2025</div>
@@ -682,12 +728,12 @@
                 <div class="timeline-item">
                     <div class="timeline-label">14 February 2025</div>
                     <div class="timeline-title">We got married</div>
-                    <div class="timeline-desc">Valentine's Day. Our day. The day I stood next to you and made the easiest promise of my entire life. I remember looking at you and thinking, "yeah, this is it. This is the person." And it was. It is. It always will be.</div>
+                    <div class="timeline-desc">Valentine's Day. Our day. The day I stood next to you and made the easiest promise of my entire life. I remember looking at you and thinking, "yeah, this is it. This is the person." And it was. It is. It always will be. (I also remember being terrified I'd mess up the vows. I didn't. Barely.)</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-label">14 February 2026</div>
                     <div class="timeline-title">One year married, four years us</div>
-                    <div class="timeline-desc">365 days of marriage. Over 1,500 days of you. Every single one of them worth it. We've built something real, something that's ours, and I'm so proud of what we are. This is just the beginning and I can't wait for the rest of it.</div>
+                    <div class="timeline-desc">365 days of marriage. Over 1,500 days of you. Every single one of them worth it. We've built something real, something that's ours, and I'm so proud of what we are. This is just the beginning and I can't wait for the rest of it. (I also can't wait for you to finally admit that I was right about the sofa.)</div>
                 </div>
             </div>
         </div>
@@ -704,17 +750,17 @@
                 <div class="reason-card">
                     <div class="reason-icon">&#10084;</div>
                     <div class="reason-title">You're kind</div>
-                    <div class="reason-text">Genuinely, deeply kind. Not in a performative way. You care about people in a way that most people don't, and I notice it every single day. It's one of the first things I loved about you.</div>
+                    <div class="reason-text">Genuinely, deeply kind. Not in a performative way. You care about people in a way that most people don't, and I notice it every single day. It's one of the first things I loved about you. (Your kindness to my cooking is especially generous.)</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-icon">&#9889;</div>
                     <div class="reason-title">You're chaotic</div>
-                    <div class="reason-text">In the best possible way. You bring energy and spontaneity into everything. Life with you is never boring, never predictable, and I wouldn't have it any other way. You keep me on my toes and I love it.</div>
+                    <div class="reason-text">In the best possible way. You bring energy and spontaneity into everything. Life with you is never boring, never predictable, and I wouldn't have it any other way. You keep me on my toes and I love it. My blood pressure might disagree, but I love it.</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-icon">&#9733;</div>
                     <div class="reason-title">You're funny</div>
-                    <div class="reason-text">You don't even try to be, which is what makes it so much better. You just naturally make me laugh, even on the days when I really don't feel like laughing. That's a superpower.</div>
+                    <div class="reason-text">You don't even try to be, which is what makes it so much better. You just naturally make me laugh, even on the days when I really don't feel like laughing. That's a superpower. (You also laugh at your own jokes before you finish telling them, which is genuinely one of my favourite things about you.)</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-icon">&#9752;</div>
@@ -740,7 +786,7 @@
         <div class="container">
             <p class="section-tag" style="text-align:center">By the numbers</p>
             <h2 class="section-title aos" style="text-align:center;color:white">Us, quantified</h2>
-            <p class="section-desc aos" style="text-align:center;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.5)">Because I'm a data person. You already knew that.</p>
+            <p class="section-desc aos" style="text-align:center;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.5)">Because I'm a data person. You already knew that. (Yes, I made a dashboard for our relationship. No, I'm not sorry.)</p>
 
             <div class="counter-grid aos">
                 <div>
@@ -758,6 +804,10 @@
                 <div>
                     <div class="counter-number">&infin;</div>
                     <div class="counter-label">More to come</div>
+                </div>
+                <div>
+                    <div class="counter-number">1</div>
+                    <div class="counter-label">Duvet (that you hog)</div>
                 </div>
             </div>
         </div>
@@ -789,7 +839,15 @@
                 </li>
                 <li class="promise-item">
                     <span class="promise-dot"></span>
+                    <span>I'll pretend to enjoy the shows you pick. (I won't always succeed, but I'll try.)</span>
+                </li>
+                <li class="promise-item">
+                    <span class="promise-dot"></span>
                     <span>I'll grow with you, not apart from you. Whatever comes next, we figure it out together.</span>
+                </li>
+                <li class="promise-item">
+                    <span class="promise-dot"></span>
+                    <span>I'll never bring up the fact that I was right about [redacted]. Even though I was. You know I was.</span>
                 </li>
                 <li class="promise-item">
                     <span class="promise-dot"></span>
@@ -805,13 +863,29 @@
             <div class="final-heart">&#10084;</div>
             <h2 class="final-message">Happy anniversary,<br><span class="accent">Sofia</span></h2>
             <p class="final-sub">
-                You're my favourite person. My best friend. The most beautifully chaotic human I've ever known. The one I want next to me on the tube, on the sofa, and everywhere in between.
+                You're my favourite person. My best friend. The most beautifully chaotic human I've ever known. The one I want next to me on the tube, on the sofa, and everywhere in between. (Even when you take up 80% of the sofa. I've measured.)
                 <br><br>
                 Here's to year two of marriage. Year five of us. And every year after that.
             </p>
             <p class="final-date">14 &middot; 12 &middot; 2021 &rarr; Forever</p>
         </div>
     </section>
+
+    <!-- Fine Print -->
+    <footer class="fine-print">
+        <div class="container">
+            <p class="fine-print-title">The fine print</p>
+            <ul class="fine-print-list">
+                <li>This website was built with genuine love and a concerning amount of caffeine.</li>
+                <li>No refunds on the marriage. You're stuck with me. Sorry about that.</li>
+                <li>The "days together" counter above is accurate. I checked. Twice.</li>
+                <li>Any resemblance to a well-adjusted, emotionally articulate husband is purely coincidental.</li>
+                <li>The duvet situation remains unresolved and is under ongoing review.</li>
+                <li>I reserve the right to reference this website in future arguments as proof that I am, in fact, romantic.</li>
+            </ul>
+            <p class="fine-print-footer">Made with &#10084; by your husband, who should probably be sleeping right now.</p>
+        </div>
+    </footer>
 
     <script>
         window.addEventListener('scroll', () => {
