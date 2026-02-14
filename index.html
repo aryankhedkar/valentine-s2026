@@ -552,6 +552,59 @@
             }
         }
 
+        /* Photo */
+        .photo-section {
+            background: var(--surface);
+            padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem);
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-frame {
+            max-width: 480px;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--border);
+            position: relative;
+        }
+
+        .photo-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-caption {
+            text-align: center;
+            margin-top: 1.25rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+
+        .photo-wrapper {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .photo-wrapper.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Animate on scroll */
         .aos {
             opacity: 0;
@@ -580,6 +633,15 @@
         <div class="scroll-line">
             <span>Scroll</span>
             <div class="scroll-line-bar"></div>
+        </div>
+    </section>
+
+    <!-- Photo -->
+    <section class="photo-section">
+        <div class="photo-wrapper">
+            <div class="photo-frame">
+                <img src="us.png" alt="Aryan and Sofia">
+            </div>
         </div>
     </section>
 
@@ -783,7 +845,7 @@
             });
         }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
 
-        document.querySelectorAll('.aos, .timeline-item, .reason-card, .promise-item').forEach((el, i) => {
+        document.querySelectorAll('.aos, .photo-wrapper, .timeline-item, .reason-card, .promise-item').forEach((el, i) => {
             el.dataset.delay = Math.min(i * 60, 300);
             observer.observe(el);
         });
