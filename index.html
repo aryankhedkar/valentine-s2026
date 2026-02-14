@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#ffffff">
+    <title>Sofia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --surface: #ffffff;
+            --border: rgba(0, 0, 0, 0.06);
+            --border-hover: rgba(220, 38, 38, 0.3);
+            --text: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --red: #dc2626;
+            --red-deep: #b91c1c;
+            --red-soft: rgba(220, 38, 38, 0.08);
+            --red-glow: rgba(220, 38, 38, 0.25);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .display { font-family: 'Sora', sans-serif; }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: var(--red);
+            z-index: 1000;
+            transition: width 0.15s ease-out;
+            box-shadow: 0 0 12px var(--red-glow);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            background: var(--surface);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 60%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 50%;
+            height: 140%;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: var(--red-soft);
+            border: 1px solid rgba(220, 38, 38, 0.15);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--red);
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .accent { color: var(--red); }
+
+        .hero-sub {
+            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+            padding: 0 0.5rem;
+        }
+
+        .hero-date {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .scroll-line {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .scroll-line span {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .scroll-line-bar {
+            width: 1px;
+            height: 32px;
+            background: linear-gradient(to bottom, var(--red), transparent);
+            animation: scrollPulse 2s ease infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.3; transform: scaleY(0.6); }
+        }
+
+        /* Sections */
+        section {
+            padding: clamp(4rem, 10vw, 8rem) clamp(1.25rem, 4vw, 2rem);
+            position: relative;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* Letter */
+        .letter-section { background: var(--bg); }
+
+        .letter-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: clamp(1.75rem, 5vw, 3rem) clamp(1.5rem, 4vw, 2.5rem);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .letter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--red), var(--red-deep));
+        }
+
+        .letter-greeting {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--red);
+            margin-bottom: 1.5rem;
+        }
+
+        .letter-body p {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            line-height: 1.85;
+        }
+
+        .letter-closing {
+            font-family: 'Sora', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 2rem;
+            text-align: right;
+        }
+
+        /* Timeline */
+        .timeline-section { background: var(--surface); }
+
+        .timeline {
+            position: relative;
+            padding-left: 1.75rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--red), rgba(220, 38, 38, 0.2), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 1.25rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: var(--red);
+            border-radius: 50%;
+            border: 3px solid var(--surface);
+            box-shadow: 0 0 0 2px var(--red);
+        }
+
+        .timeline-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1rem, 3vw, 1.125rem);
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: clamp(0.875rem, 2.5vw, 0.95rem);
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        /* Reasons grid */
+        .reasons-section { background: var(--bg); }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .reason-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: clamp(1.25rem, 4vw, 1.75rem);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .reason-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reason-card:hover {
+            border-color: var(--border-hover);
+            background: var(--red-soft);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.08);
+        }
+
+        .reason-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+        .reason-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(0.875rem, 2.5vw, 1rem);
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .reason-text {
+            font-size: clamp(0.8rem, 2vw, 0.875rem);
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* Counter */
+        .counter-section {
+            background: var(--text);
+            color: white;
+        }
+
+        .counter-section .section-tag { color: rgba(220, 38, 38, 0.8); }
+        .counter-section .section-title { color: white; }
+        .counter-section .section-desc { color: rgba(255,255,255,0.5); }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .counter-number {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            color: var(--red);
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+
+        .counter-label {
+            font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-top: 0.5rem;
+        }
+
+        /* Promises */
+        .promises-section { background: var(--surface); }
+
+        .promise-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .promise-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: clamp(0.875rem, 2.5vw, 0.95rem);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .promise-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .promise-item:hover {
+            border-color: var(--border-hover);
+            background: var(--red-soft);
+            transform: translateX(4px);
+        }
+
+        .promise-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--red);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 0.45rem;
+        }
+
+        /* Final */
+        .final-section {
+            min-height: 80vh;
+            min-height: 80dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg);
+            padding: 4rem 1.5rem;
+        }
+
+        .final-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(220, 38, 38, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .final-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 620px;
+        }
+
+        .final-heart {
+            font-size: 3rem;
+            color: var(--red);
+            display: inline-block;
+            animation: heartbeat 1.5s ease infinite;
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.15); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+        }
+
+        .final-message {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.5rem, 6vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .final-message .accent { color: var(--red); }
+
+        .final-sub {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 2rem;
+        }
+
+        .final-date {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .counter-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .reason-card:hover,
+            .promise-item:hover {
+                transform: none;
+            }
+
+            .scroll-line { bottom: 1.5rem; }
+        }
+
+        @media (max-width: 380px) {
+            .hero h1 { font-size: 2.25rem; }
+            .hero-tag { font-size: 0.7rem; padding: 0.35rem 0.75rem; }
+        }
+
+        /* Touch devices: disable hover transforms */
+        @media (hover: none) {
+            .reason-card:hover,
+            .promise-item:hover {
+                transform: none;
+                background: var(--surface);
+                border-color: var(--border);
+                box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            }
+        }
+
+        /* Animate on scroll */
+        .aos {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .aos.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-tag">14 February 2026</div>
+            <h1>Aryan &<br><span class="accent">Sofia</span></h1>
+            <p class="hero-sub">We met in December. Our first Valentine's changed everything. Three years ago I asked you to marry me. One year ago you said "I do." Every February 14th, you give me another reason to love this day.</p>
+            <span class="hero-date">1st Wedding Anniversary &middot; Valentine's Day</span>
+        </div>
+        <div class="scroll-line">
+            <span>Scroll</span>
+            <div class="scroll-line-bar"></div>
+        </div>
+    </section>
+
+    <!-- Letter -->
+    <section class="letter-section">
+        <div class="container">
+            <p class="section-tag">A note for you</p>
+            <h2 class="section-title aos">I wrote you something</h2>
+            <p class="section-desc aos">I'm not great with words, you know that. But you deserve the effort, so here goes.</p>
+
+            <div class="letter-card aos">
+                <p class="letter-greeting">Sofia,</p>
+                <div class="letter-body">
+                    <p>A year ago today I married you. I'd do it again tomorrow and the day after that and every day after that. But honestly, I knew I was going to spend my life with you long before the wedding. I think I knew somewhere around the time I realised that no one else makes me laugh the way you do, no one else drives me as mad as you do, and no one else makes a random Tuesday evening feel like the best part of my week.</p>
+                    <p>You're the most chaotic person I've ever met and I mean that as the biggest compliment I can give. You bring energy into every room, you turn nothing plans into the best memories, and you somehow make even the most stressful days feel manageable just by being around. I don't know how you do it. I really don't. But I'm so glad you do.</p>
+                    <p>I love the mornings where we take the tube together to Kings Cross and I watch you disappear towards Holborn while I head to Farringdon, and for those few minutes on the platform I just think about how lucky I am that I get to go home to you later. It's such a small, ordinary thing. But it's my favourite part of the day and I don't think you even know that.</p>
+                    <p>You've made me a better person this year. More patient (still working on it), more present, more aware of what matters. You challenge me when I need it, you support me when I don't ask for it, and you love me in a way that I genuinely don't think I deserve but I'm going to spend the rest of my life trying to.</p>
+                    <p>Thank you for four incredible years. Thank you for saying yes three years ago. Thank you for marrying me last year. And thank you for being the reason I look forward to every single day.</p>
+                </div>
+                <p class="letter-closing">All my love, always. Aryan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <p class="section-tag">Our story</p>
+            <h2 class="section-title aos">How we got here</h2>
+            <p class="section-desc aos">Every milestone on the same date. I don't think that's a coincidence.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-label">14 December 2021</div>
+                    <div class="timeline-title">We met</div>
+                    <div class="timeline-desc">I didn't know it at the time, but this was the day that changed everything. Two months before Valentine's Day, and you walked into my life like you'd always been there. I haven't been the same since. I wouldn't want to be.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">14 February 2022</div>
+                    <div class="timeline-title">Our first Valentine's Day</div>
+                    <div class="timeline-desc">Two months after we met. This was the night that made it real. The night I knew this wasn't just something casual, that you weren't just someone I liked spending time with. You were the person. I just didn't have the words for it yet.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">14 February 2023</div>
+                    <div class="timeline-title">I asked you to marry me</div>
+                    <div class="timeline-desc">One year in and I already knew I didn't want to do any of this without you. So I asked. And you said yes. I don't think I've ever felt relief and joy hit me at the same time like that before. Probably the best moment of my life up to that point.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">2023 to 2025</div>
+                    <div class="timeline-title">Building towards forever</div>
+                    <div class="timeline-desc">Two years of planning, growing, learning each other's quirks (you have a lot of them, by the way). Late night conversations about everything and nothing. The kind of time where you don't realise how good it is until you look back on it. I'm looking back on it now, and it was really, really good.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">14 February 2025</div>
+                    <div class="timeline-title">We got married</div>
+                    <div class="timeline-desc">Valentine's Day. Our day. The day I stood next to you and made the easiest promise of my entire life. I remember looking at you and thinking, "yeah, this is it. This is the person." And it was. It is. It always will be.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-label">14 February 2026</div>
+                    <div class="timeline-title">One year married, four years us</div>
+                    <div class="timeline-desc">365 days of marriage. Over 1,500 days of you. Every single one of them worth it. We've built something real, something that's ours, and I'm so proud of what we are. This is just the beginning and I can't wait for the rest of it.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons -->
+    <section class="reasons-section">
+        <div class="container">
+            <p class="section-tag">The obvious stuff</p>
+            <h2 class="section-title aos">Why you</h2>
+            <p class="section-desc aos">I could write a hundred of these. Here's six to start with.</p>
+
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-icon">&#10084;</div>
+                    <div class="reason-title">You're kind</div>
+                    <div class="reason-text">Genuinely, deeply kind. Not in a performative way. You care about people in a way that most people don't, and I notice it every single day. It's one of the first things I loved about you.</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">&#9889;</div>
+                    <div class="reason-title">You're chaotic</div>
+                    <div class="reason-text">In the best possible way. You bring energy and spontaneity into everything. Life with you is never boring, never predictable, and I wouldn't have it any other way. You keep me on my toes and I love it.</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">&#9733;</div>
+                    <div class="reason-title">You're funny</div>
+                    <div class="reason-text">You don't even try to be, which is what makes it so much better. You just naturally make me laugh, even on the days when I really don't feel like laughing. That's a superpower.</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">&#9752;</div>
+                    <div class="reason-title">You push me</div>
+                    <div class="reason-text">You don't let me settle. You challenge me when I'm being lazy, you call me out when I need it, and you make me want to be better. Not everyone does that. You do it without even thinking about it.</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">&#10038;</div>
+                    <div class="reason-title">You're strong</div>
+                    <div class="reason-text">You handle things with a resilience that genuinely amazes me. You don't make a show of it, you just get on with it. I admire that more than you probably know.</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">&#10047;</div>
+                    <div class="reason-title">You're you</div>
+                    <div class="reason-text">That's the real answer. Everything else is just a subset of this one. I love you because you are exactly who you are, and I wouldn't change a single thing about it.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter -->
+    <section class="counter-section">
+        <div class="container">
+            <p class="section-tag" style="text-align:center">By the numbers</p>
+            <h2 class="section-title aos" style="text-align:center;color:white">Us, quantified</h2>
+            <p class="section-desc aos" style="text-align:center;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.5)">Because I'm a data person. You already knew that.</p>
+
+            <div class="counter-grid aos">
+                <div>
+                    <div class="counter-number" id="cTogether">4</div>
+                    <div class="counter-label">Years together</div>
+                </div>
+                <div>
+                    <div class="counter-number" id="cMarried">1</div>
+                    <div class="counter-label">Year married</div>
+                </div>
+                <div>
+                    <div class="counter-number" id="cDays">1,523</div>
+                    <div class="counter-label">Days of us</div>
+                </div>
+                <div>
+                    <div class="counter-number">&infin;</div>
+                    <div class="counter-label">More to come</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promises -->
+    <section class="promises-section">
+        <div class="container">
+            <p class="section-tag">Looking ahead</p>
+            <h2 class="section-title aos">What I promise you</h2>
+            <p class="section-desc aos">Not just today. Every day after this one too.</p>
+
+            <ul class="promise-list">
+                <li class="promise-item">
+                    <span class="promise-dot"></span>
+                    <span>I'll choose you every single day. The easy ones and the hard ones. Especially the hard ones.</span>
+                </li>
+                <li class="promise-item">
+                    <span class="promise-dot"></span>
+                    <span>I'll be your safe place when everything else feels like too much. You can always come home to me.</span>
+                </li>
+                <li class="promise-item">
+                    <span class="promise-dot"></span>
+                    <span>I'll keep trying to make you laugh, even when the jokes are terrible. Especially when they're terrible.</span>
+                </li>
+                <li class="promise-item">
+                    <span class="promise-dot"></span>
+                    <span>I'll match your chaos with patience, and your energy with presence. We balance each other out and I never want that to change.</span>
+                </li>
+                <li class="promise-item">
+                    <span class="promise-dot"></span>
+                    <span>I'll grow with you, not apart from you. Whatever comes next, we figure it out together.</span>
+                </li>
+                <li class="promise-item">
+                    <span class="promise-dot"></span>
+                    <span>I'll love you more tomorrow than I do today. And even more the day after that. That's not a cliche, it's just how it works with you.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Final -->
+    <section class="final-section">
+        <div class="final-inner">
+            <div class="final-heart">&#10084;</div>
+            <h2 class="final-message">Happy anniversary,<br><span class="accent">Sofia</span></h2>
+            <p class="final-sub">
+                You're my favourite person. My best friend. The most beautifully chaotic human I've ever known. The one I want next to me on the tube, on the sofa, and everywhere in between.
+                <br><br>
+                Here's to year two of marriage. Year five of us. And every year after that.
+            </p>
+            <p class="final-date">14 &middot; 12 &middot; 2021 &rarr; Forever</p>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = (window.scrollY / h) * 100;
+            document.getElementById('progressBar').style.width = pct + '%';
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.dataset.delay || 0;
+                    setTimeout(() => entry.target.classList.add('visible'), delay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
+
+        document.querySelectorAll('.aos, .timeline-item, .reason-card, .promise-item').forEach((el, i) => {
+            el.dataset.delay = Math.min(i * 60, 300);
+            observer.observe(el);
+        });
+
+        function updateCounter() {
+            const met = new Date('2021-12-14T00:00:00');
+            const wedding = new Date('2025-02-14T00:00:00');
+            const now = new Date();
+
+            const totalDays = Math.floor((now - met) / (1000 * 60 * 60 * 24));
+            const marriedDays = Math.floor((now - wedding) / (1000 * 60 * 60 * 24));
+            const marriedYears = Math.floor(marriedDays / 365);
+            const togetherYears = Math.floor(totalDays / 365);
+
+            document.getElementById('cTogether').textContent = togetherYears;
+            document.getElementById('cMarried').textContent = marriedYears;
+            document.getElementById('cDays').textContent = totalDays.toLocaleString();
+        }
+        updateCounter();
+        setInterval(updateCounter, 60000);
+    </script>
+</body>
+</html>
