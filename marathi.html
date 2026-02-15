@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="theme-color" content="#ffffff">
-    <title>Sofaryan Valentine's 2026</title>
+    <title>सोफार्यन Valentine's 2026</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #fafafa;
@@ -31,15 +31,15 @@
         html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Noto Sans Devanagari', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.7;
+            line-height: 1.8;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, .display { font-family: 'Sora', sans-serif; }
+        h1, h2, h3, .display { font-family: 'Noto Sans Devanagari', 'Sora', sans-serif; }
 
         .lang-toggle {
             position: fixed;
@@ -81,7 +81,6 @@
             box-shadow: 0 0 12px var(--red-glow);
         }
 
-        /* Hero */
         .hero {
             min-height: 100vh;
             min-height: 100dvh;
@@ -141,8 +140,8 @@
         .hero h1 {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -0.04em;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
             color: var(--text);
             margin-bottom: 1.5rem;
         }
@@ -152,9 +151,9 @@
         .hero-sub {
             font-size: clamp(0.95rem, 2.5vw, 1.15rem);
             color: var(--text-secondary);
-            max-width: 540px;
+            max-width: 560px;
             margin: 0 auto 2.5rem;
-            line-height: 1.7;
+            line-height: 1.8;
             padding: 0 0.5rem;
         }
 
@@ -196,7 +195,6 @@
             50% { opacity: 0.3; transform: scaleY(0.6); }
         }
 
-        /* Sections */
         section {
             padding: clamp(4rem, 10vw, 8rem) clamp(1.25rem, 4vw, 2rem);
             position: relative;
@@ -219,7 +217,7 @@
         .section-title {
             font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-weight: 700;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             color: var(--text);
             margin-bottom: 1rem;
         }
@@ -229,10 +227,9 @@
             color: var(--text-secondary);
             max-width: 560px;
             margin-bottom: 2.5rem;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        /* Letter */
         .letter-section { background: var(--bg); }
 
         .letter-card {
@@ -256,7 +253,7 @@
         }
 
         .letter-greeting {
-            font-family: 'Sora', sans-serif;
+            font-family: 'Noto Sans Devanagari', 'Sora', sans-serif;
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--red);
@@ -267,11 +264,11 @@
             font-size: clamp(0.9rem, 2.5vw, 1rem);
             color: var(--text-secondary);
             margin-bottom: 1.25rem;
-            line-height: 1.85;
+            line-height: 1.9;
         }
 
         .letter-closing {
-            font-family: 'Sora', sans-serif;
+            font-family: 'Noto Sans Devanagari', 'Sora', sans-serif;
             font-size: 1rem;
             font-weight: 600;
             color: var(--text);
@@ -279,7 +276,6 @@
             text-align: right;
         }
 
-        /* Timeline */
         .timeline-section { background: var(--surface); }
 
         .timeline {
@@ -336,7 +332,7 @@
         }
 
         .timeline-title {
-            font-family: 'Sora', sans-serif;
+            font-family: 'Noto Sans Devanagari', 'Sora', sans-serif;
             font-size: clamp(1rem, 3vw, 1.125rem);
             font-weight: 600;
             color: var(--text);
@@ -346,10 +342,9 @@
         .timeline-desc {
             font-size: clamp(0.875rem, 2.5vw, 0.95rem);
             color: var(--text-secondary);
-            line-height: 1.75;
+            line-height: 1.85;
         }
 
-        /* Reasons grid */
         .reasons-section { background: var(--bg); }
 
         .reasons-grid {
@@ -384,7 +379,7 @@
         .reason-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
 
         .reason-title {
-            font-family: 'Sora', sans-serif;
+            font-family: 'Noto Sans Devanagari', 'Sora', sans-serif;
             font-size: clamp(0.875rem, 2.5vw, 1rem);
             font-weight: 600;
             color: var(--text);
@@ -394,10 +389,9 @@
         .reason-text {
             font-size: clamp(0.8rem, 2vw, 0.875rem);
             color: var(--text-muted);
-            line-height: 1.65;
+            line-height: 1.75;
         }
 
-        /* Counter */
         .counter-section {
             background: var(--text);
             color: white;
@@ -432,7 +426,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Promises */
         .promises-section { background: var(--surface); }
 
         .promise-list {
@@ -452,7 +445,7 @@
             border-radius: 12px;
             font-size: clamp(0.875rem, 2.5vw, 0.95rem);
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.7;
             transition: all 0.3s ease;
             opacity: 0;
             transform: translateX(-20px);
@@ -478,7 +471,6 @@
             margin-top: 0.45rem;
         }
 
-        /* Final */
         .final-section {
             min-height: 80vh;
             min-height: 80dvh;
@@ -522,11 +514,11 @@
         }
 
         .final-message {
-            font-family: 'Sora', sans-serif;
+            font-family: 'Noto Sans Devanagari', 'Sora', sans-serif;
             font-size: clamp(1.5rem, 6vw, 3rem);
             font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
             color: var(--text);
             margin-bottom: 1.5rem;
         }
@@ -536,7 +528,7 @@
         .final-sub {
             font-size: clamp(0.9rem, 2.5vw, 1rem);
             color: var(--text-secondary);
-            line-height: 1.85;
+            line-height: 1.9;
             margin-bottom: 2rem;
         }
 
@@ -548,7 +540,6 @@
             color: var(--text-muted);
         }
 
-        /* Fine Print */
         .fine-print {
             background: var(--surface);
             border-top: 1px solid var(--border);
@@ -556,7 +547,7 @@
         }
 
         .fine-print-title {
-            font-family: 'Sora', sans-serif;
+            font-family: 'Noto Sans Devanagari', 'Sora', sans-serif;
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 0.15em;
@@ -574,7 +565,7 @@
         .fine-print-list li {
             font-size: clamp(0.72rem, 1.8vw, 0.8rem);
             color: var(--text-muted);
-            line-height: 1.7;
+            line-height: 1.8;
             padding-left: 1rem;
             position: relative;
         }
@@ -594,7 +585,6 @@
             font-style: italic;
         }
 
-        /* Mobile */
         @media (max-width: 640px) {
             .reasons-grid {
                 grid-template-columns: 1fr;
@@ -618,7 +608,6 @@
             .hero-tag { font-size: 0.7rem; padding: 0.35rem 0.75rem; }
         }
 
-        /* Touch devices: disable hover transforms */
         @media (hover: none) {
             .reason-card:hover,
             .promise-item:hover {
@@ -629,7 +618,6 @@
             }
         }
 
-        /* Photo */
         .photo-section {
             background: var(--surface);
             padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem);
@@ -665,7 +653,6 @@
             transform: translateY(0);
         }
 
-        /* Animate on scroll */
         .aos {
             opacity: 0;
             transform: translateY(20px);
@@ -681,8 +668,8 @@
 <body>
 
     <div class="lang-toggle">
-        <a href="index.html" class="active">EN</a>
-        <a href="marathi.html">मराठी</a>
+        <a href="index.html">EN</a>
+        <a href="marathi.html" class="active">मराठी</a>
     </div>
 
     <div class="progress-bar" id="progressBar"></div>
@@ -690,13 +677,13 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-inner">
-            <div class="hero-tag">14 February 2026</div>
-            <h1>Aryan &<br><span class="accent">Sofia</span></h1>
-            <p class="hero-sub">We met in December. Our first Valentine's changed everything. Three years ago I asked you to marry me. One year ago you said "I do." Every February 14th, you give me another reason to love this day.</p>
-            <span class="hero-date">1st Wedding Anniversary &middot; Valentine's Day</span>
+            <div class="hero-tag">१४ फेब्रुवारी २०२६</div>
+            <h1>अर्यन &<br><span class="accent">सोफिया</span></h1>
+            <p class="hero-sub">आम्ही डिसेंबरमध्ये भेटलो. आमच्या पहिल्या Valentine's Day ने सगळं बदललं. तीन वर्षांपूर्वी मी तिला लग्नासाठी विचारलं. एक वर्षापूर्वी तिने "हो" म्हणालं. प्रत्येक १४ फेब्रुवारीला ती मला हा दिवस आणखी आवडायला एक नवीन कारण देते.</p>
+            <span class="hero-date">पहिला लग्नाचा वाढदिवस &middot; Valentine's Day</span>
         </div>
         <div class="scroll-line">
-            <span>Scroll</span>
+            <span>खाली</span>
             <div class="scroll-line-bar"></div>
         </div>
     </section>
@@ -705,7 +692,7 @@
     <section class="photo-section">
         <div class="photo-wrapper">
             <div class="photo-frame">
-                <img src="us.png" alt="Aryan and Sofia">
+                <img src="us.png" alt="अर्यन आणि सोफिया">
             </div>
         </div>
     </section>
@@ -713,20 +700,20 @@
     <!-- Letter -->
     <section class="letter-section">
         <div class="container">
-            <p class="section-tag">A note for you</p>
-            <h2 class="section-title aos">I wrote you something</h2>
-            <p class="section-desc aos">I'm not great with words, you know that. But you deserve the effort, so here goes.</p>
+            <p class="section-tag">तुझ्यासाठी</p>
+            <h2 class="section-title aos">मी तुझ्यासाठी काहीतरी लिहिलं</h2>
+            <p class="section-desc aos">मला शब्दांत बोलायला फार जमत नाही, तुला माहीत आहे. पण तू deserve करतेस, म्हणून try करतोय.</p>
 
             <div class="letter-card aos">
-                <p class="letter-greeting">Sofia,</p>
+                <p class="letter-greeting">सोफिया,</p>
                 <div class="letter-body">
-                    <p>A year ago today I married you. I'd do it again tomorrow and the day after that and every day after that. But honestly, I knew I was going to spend my life with you long before the wedding. I think I knew somewhere around the time I realised that no one else makes me laugh the way you do, no one else drives me as mad as you do, and no one else makes a random Tuesday evening feel like the best part of my week.</p>
-                    <p>You're the most chaotic person I've ever met and I mean that as the biggest compliment I can give. You bring energy into every room, you turn nothing plans into the best memories, and you somehow make even the most stressful days feel manageable just by being around. I don't know how you do it. I really don't. But I'm so glad you do. (Even when your version of "being around" involves reorganising the entire flat at 11pm on a Wednesday.)</p>
-                    <p>I love the mornings where we take the tube together to Kings Cross and I watch you disappear towards Holborn while I head to Farringdon, and for those few minutes on the platform I just think about how lucky I am that I get to go home to you later. It's such a small, ordinary thing. But it's my favourite part of the day and I don't think you even know that. (Also you always walk too fast. I want you to know that.)</p>
-                    <p>You've made me a better person this year. More patient (still working on it), more present, more aware of what matters. You challenge me when I need it, you support me when I don't ask for it, and you love me in a way that I genuinely don't think I deserve but I'm going to spend the rest of my life trying to. You also steal the duvet every single night without fail, but I've decided to let that slide because the rest of you is pretty great.</p>
-                    <p>Thank you for four incredible years. Thank you for saying yes three years ago. Thank you for marrying me last year. And thank you for being the reason I look forward to every single day. Even the ones where you eat my leftovers.</p>
+                    <p>बरोबर एक वर्षापूर्वी आज मी तुझ्याशी लग्न केलं. उद्या परत करेन, परवा परत करेन, रोज करेन. पण खरं सांगायचं तर, लग्नाच्या आधीपासूनच मला माहीत होतं की मी आयुष्यभर तुझ्यासोबत राहणार आहे. बहुतेक तेव्हा कळलं जेव्हा मला समजलं की तुझ्यासारखं कोणी मला हसवत नाही, तुझ्यासारखं कोणी मला वेडं करत नाही, आणि तुझ्यासारखं कोणी एक साधी मंगळवारची संध्याकाळ आठवड्यातला सगळ्यात चांगला वेळ बनवत नाही.</p>
+                    <p>तू माझ्या आयुष्यातली सगळ्यात chaotic व्यक्ती आहेस, आणि हे मी सगळ्यात मोठं compliment म्हणून बोलतोय. तू प्रत्येक room मध्ये energy आणतेस, काहीच नसलेल्या plans ला best memories बनवतेस, आणि सगळ्यात stressful दिवसांना पण manageable बनवतेस फक्त तू जवळ असल्यामुळे. मला माहीत नाही तू हे कसं करतेस. खरंच माहीत नाही. पण मला खूप आनंद आहे की तू करतेस. (रात्री ११ वाजता बुधवारी पूर्ण flat reorganise करणं हे पण "जवळ असणं" मध्ये येतं तुझ्यासाठी.)</p>
+                    <p>मला ती सकाळ आवडते जेव्हा आपण एकत्र tube ने Kings Cross ला जातो आणि तू Holborn कडे जातेस आणि मी Farringdon कडे, आणि त्या काही मिनिटांत platform वर मी फक्त विचार करतो की मी किती lucky आहे की संध्याकाळी मी तुझ्याकडे घरी येणार आहे. ही खूप साधी, सामान्य गोष्ट आहे. पण हा माझ्या दिवसाचा सगळ्यात आवडता भाग आहे आणि तुला बहुतेक हे माहीतही नाही. (आणि तू नेहमी खूप fast चालतेस. हे मला तुला सांगायचं होतं.)</p>
+                    <p>तू मला या वर्षात एक चांगला माणूस बनवलंस. जास्त patient (अजून शिकतोय), जास्त present, काय important आहे याची जास्त जाणीव. तू मला challenge करतेस जेव्हा गरज असते, तू मला support करतेस मी न मागताही, आणि तू माझ्यावर अशा प्रकारे प्रेम करतेस जे मला खरंच वाटतं मी deserve करत नाही, पण बाकीचं आयुष्य मी ते deserve करायचा प्रयत्न करणार आहे. आणि हो, तू रोज रात्री blanket पूर्ण ओढून घेतेस, पण मी ते सोडून दिलंय कारण बाकी तू भारी आहेस.</p>
+                    <p>चार अविश्वसनीय वर्षांसाठी धन्यवाद. तीन वर्षांपूर्वी हो म्हणाल्याबद्दल धन्यवाद. गेल्या वर्षी माझ्याशी लग्न केल्याबद्दल धन्यवाद. आणि प्रत्येक दिवसाची वाट बघायला लावल्याबद्दल धन्यवाद. तू माझे leftovers खातेस त्या दिवसांसाठी पण.</p>
                 </div>
-                <p class="letter-closing">All my love, always. Aryan</p>
+                <p class="letter-closing">सगळं प्रेम, नेहमी. अर्यन</p>
             </div>
         </div>
     </section>
@@ -734,40 +721,40 @@
     <!-- Timeline -->
     <section class="timeline-section">
         <div class="container">
-            <p class="section-tag">Our story</p>
-            <h2 class="section-title aos">How we got here</h2>
-            <p class="section-desc aos">Every milestone on the same date. I don't think that's a coincidence.</p>
+            <p class="section-tag">आपली गोष्ट</p>
+            <h2 class="section-title aos">आपण इथपर्यंत कसे आलो</h2>
+            <p class="section-desc aos">प्रत्येक milestone एकाच तारखेला. मला नाही वाटत हा योगायोग आहे.</p>
 
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-label">14 December 2021</div>
-                    <div class="timeline-title">We met</div>
-                    <div class="timeline-desc">I didn't know it at the time, but this was the day that changed everything. Two months before Valentine's Day, and you walked into my life like you'd always been there. I haven't been the same since. I wouldn't want to be. (My bank account hasn't been the same either, but that's a separate conversation.)</div>
+                    <div class="timeline-label">१४ डिसेंबर २०२१</div>
+                    <div class="timeline-title">आपण भेटलो</div>
+                    <div class="timeline-desc">त्यावेळी मला माहीत नव्हतं, पण हा तो दिवस होता ज्याने सगळं बदललं. Valentine's Day च्या दोन महिने आधी, तू माझ्या आयुष्यात अशी आलीस जशी तू नेहमीच होतीस. तेव्हापासून मी बदललो. आणि मला बदलायचं नाही परत. (माझ्या bank account ला पण फरक पडला, पण ती वेगळी गोष्ट आहे.)</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-label">14 February 2022</div>
-                    <div class="timeline-title">Our first Valentine's Day</div>
-                    <div class="timeline-desc">Two months after we met. This was the night that made it real. The night I knew this wasn't just something casual, that you weren't just someone I liked spending time with. You were the person. I just didn't have the words for it yet.</div>
+                    <div class="timeline-label">१४ फेब्रुवारी २०२२</div>
+                    <div class="timeline-title">आपला पहिला Valentine's Day</div>
+                    <div class="timeline-desc">भेटल्यानंतर दोन महिने. ही ती रात्र होती जेव्हा सगळं खरं वाटायला लागलं. ती रात्र जेव्हा मला कळलं की हे casual नाही, तू फक्त कोणीतरी नाहीस ज्याच्यासोबत वेळ घालवायला आवडतो. तू ती व्यक्ती आहेस. मला फक्त त्यावेळी शब्द सापडत नव्हते.</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-label">14 February 2023</div>
-                    <div class="timeline-title">I asked you to marry me</div>
-                    <div class="timeline-desc">One year in and I already knew I didn't want to do any of this without you. So I asked. And you said yes. I don't think I've ever felt relief and joy hit me at the same time like that before. Probably the best moment of my life up to that point. (I had a whole speech planned. I forgot all of it. You said yes anyway.)</div>
+                    <div class="timeline-label">१४ फेब्रुवारी २०२३</div>
+                    <div class="timeline-title">मी तुला लग्नासाठी विचारलं</div>
+                    <div class="timeline-desc">एक वर्ष झालं होतं आणि मला आधीच माहीत होतं की तुझ्याशिवाय हे काहीच नको. म्हणून मी विचारलं. आणि तू हो म्हणालीस. मला वाटतं relief आणि आनंद एकत्र कधी इतक्या जोरात आला नव्हता. बहुतेक त्या वेळेपर्यंतचा माझ्या आयुष्यातला सगळ्यात चांगला क्षण. (मी पूर्ण speech तयार केलं होतं. सगळं विसरलो. तरी तू हो म्हणालीस.)</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-label">2023 to 2025</div>
-                    <div class="timeline-title">Building towards forever</div>
-                    <div class="timeline-desc">Two years of planning, growing, learning each other's quirks (you have a lot of them, by the way). Late night conversations about everything and nothing. The kind of time where you don't realise how good it is until you look back on it. I'm looking back on it now, and it was really, really good.</div>
+                    <div class="timeline-label">२०२३ ते २०२५</div>
+                    <div class="timeline-title">Forever साठी तयारी</div>
+                    <div class="timeline-desc">दोन वर्षं planning, वाढणं, एकमेकांच्या quirks शिकणं (तुझ्याकडे खूप आहेत, by the way). रात्री उशिरापर्यंत सगळ्या विषयांवर बोलणं आणि काहीच नाही वर पण बोलणं. असा वेळ जेव्हा तुला कळत नाही तो किती चांगला आहे, जोपर्यंत तू मागे वळून बघत नाहीस. मी आत्ता मागे वळून बघतोय, आणि तो खरंच, खरंच चांगला होता.</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-label">14 February 2025</div>
-                    <div class="timeline-title">We got married</div>
-                    <div class="timeline-desc">Valentine's Day. Our day. The day I stood next to you and made the easiest promise of my entire life. I remember looking at you and thinking, "yeah, this is it. This is the person." And it was. It is. It always will be. (I also remember being terrified I'd mess up the vows. I didn't. Barely.)</div>
+                    <div class="timeline-label">१४ फेब्रुवारी २०२५</div>
+                    <div class="timeline-title">आपलं लग्न झालं</div>
+                    <div class="timeline-desc">Valentine's Day. आपला दिवस. तो दिवस जेव्हा मी तुझ्या शेजारी उभा राहून माझ्या आयुष्यातलं सगळ्यात सोपं वचन दिलं. मला आठवतं मी तुझ्याकडे बघत होतो आणि विचार करत होतो, "हो, हीच ती. ही ती व्यक्ती आहे." आणि होती. आहे. नेहमी असेल. (मला vows चुकतील याची पण भयंकर भीती वाटत होती. चुकले नाहीत. जेमतेम.)</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-label">14 February 2026</div>
-                    <div class="timeline-title">One year married, four years us</div>
-                    <div class="timeline-desc">365 days of marriage. Over 1,500 days of you. Every single one of them worth it. We've built something real, something that's ours, and I'm so proud of what we are. This is just the beginning and I can't wait for the rest of it. (I also can't wait for you to finally admit that I was right about the sofa.)</div>
+                    <div class="timeline-label">१४ फेब्रुवारी २०२६</div>
+                    <div class="timeline-title">लग्नाला एक वर्ष, आपल्याला चार वर्षं</div>
+                    <div class="timeline-desc">३६५ दिवस लग्नाचे. १,५०० पेक्षा जास्त दिवस तुझे. प्रत्येक दिवस worth it. आपण काहीतरी खरं बनवलं, काहीतरी जे फक्त आपलं आहे, आणि मला आपल्याबद्दल खूप अभिमान आहे. ही फक्त सुरुवात आहे आणि बाकीची वाट बघायला मला अजिबात सबर नाही. (आणि तू sofa बद्दल मी बरोबर होतो हे कधी मान्य करशील याचीही वाट बघतोय.)</div>
                 </div>
             </div>
         </div>
@@ -776,40 +763,40 @@
     <!-- Reasons -->
     <section class="reasons-section">
         <div class="container">
-            <p class="section-tag">The obvious stuff</p>
-            <h2 class="section-title aos">Why you</h2>
-            <p class="section-desc aos">I could write a hundred of these. Here's six to start with.</p>
+            <p class="section-tag">उघड गोष्टी</p>
+            <h2 class="section-title aos">तूच का</h2>
+            <p class="section-desc aos">मी शंभर लिहू शकतो. सध्या सहा ने सुरुवात.</p>
 
             <div class="reasons-grid">
                 <div class="reason-card">
                     <div class="reason-icon">&#10084;</div>
-                    <div class="reason-title">You're kind</div>
-                    <div class="reason-text">Genuinely, deeply kind. Not in a performative way. You care about people in a way that most people don't, and I notice it every single day. It's one of the first things I loved about you. (Your kindness to my cooking is especially generous.)</div>
+                    <div class="reason-title">तू दयाळू आहेस</div>
+                    <div class="reason-text">खरोखरच, मनापासून. दिखाव्यासाठी नाही. तू लोकांची काळजी अशा प्रकारे घेतेस जशी बहुतेक लोक घेत नाहीत, आणि मला ते रोज दिसतं. तुझ्याबद्दल मला पहिल्यांदा आवडलेल्या गोष्टींपैकी एक. (माझ्या cooking बद्दल तुझी दयाळूपणा विशेष generous आहे.)</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-icon">&#9889;</div>
-                    <div class="reason-title">You're chaotic</div>
-                    <div class="reason-text">In the best possible way. You bring energy and spontaneity into everything. Life with you is never boring, never predictable, and I wouldn't have it any other way. You keep me on my toes and I love it. My blood pressure might disagree, but I love it.</div>
+                    <div class="reason-title">तू chaotic आहेस</div>
+                    <div class="reason-text">सगळ्यात चांगल्या प्रकारे. तू सगळ्यात energy आणि spontaneity आणतेस. तुझ्यासोबतचं आयुष्य कधी boring नाही, कधी predictable नाही, आणि मला दुसरं काही नकोय. तू मला alert ठेवतेस आणि मला ते आवडतं. माझ्या blood pressure ला कदाचित नाही, पण मला आवडतं.</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-icon">&#9733;</div>
-                    <div class="reason-title">You're funny</div>
-                    <div class="reason-text">You don't even try to be, which is what makes it so much better. You just naturally make me laugh, even on the days when I really don't feel like laughing. That's a superpower. (You also laugh at your own jokes before you finish telling them, which is genuinely one of my favourite things about you.)</div>
+                    <div class="reason-title">तू funny आहेस</div>
+                    <div class="reason-text">तू try पण करत नाहीस, आणि म्हणूनच ते इतकं भारी आहे. तू naturally मला हसवतेस, त्या दिवशी पण जेव्हा मला खरंच हसायचं नसतं. ती superpower आहे. (तू स्वतःच्या jokes वर ते सांगायच्या आधीच हसतेस, आणि ती खरंच माझ्या favourite गोष्टींपैकी एक आहे.)</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-icon">&#9752;</div>
-                    <div class="reason-title">You push me</div>
-                    <div class="reason-text">You don't let me settle. You challenge me when I'm being lazy, you call me out when I need it, and you make me want to be better. Not everyone does that. You do it without even thinking about it.</div>
+                    <div class="reason-title">तू मला push करतेस</div>
+                    <div class="reason-text">तू मला settle होऊ देत नाहीस. मी lazy असतो तेव्हा तू challenge करतेस, गरज असते तेव्हा बोलतेस, आणि तू मला चांगलं व्हायला लावतेस. सगळे हे करत नाहीत. तू विचार न करता करतेस.</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-icon">&#10038;</div>
-                    <div class="reason-title">You're strong</div>
-                    <div class="reason-text">You handle things with a resilience that genuinely amazes me. You don't make a show of it, you just get on with it. I admire that more than you probably know.</div>
+                    <div class="reason-title">तू strong आहेस</div>
+                    <div class="reason-text">तू गोष्टी अशा resilience ने handle करतेस जे मला खरंच amaze करतं. तू त्याचा show करत नाहीस, फक्त करतेस. मी तुझं हे तुला कळतं त्यापेक्षा जास्त admire करतो.</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-icon">&#10047;</div>
-                    <div class="reason-title">You're you</div>
-                    <div class="reason-text">That's the real answer. Everything else is just a subset of this one. I love you because you are exactly who you are, and I wouldn't change a single thing about it.</div>
+                    <div class="reason-title">तू तू आहेस</div>
+                    <div class="reason-text">हे खरं उत्तर आहे. बाकी सगळं याचाच भाग आहे. मी तुझ्यावर प्रेम करतो कारण तू exactly तशीच आहेस जशी तू आहेस, आणि मी त्यात एकही गोष्ट बदलणार नाही.</div>
                 </div>
             </div>
         </div>
@@ -818,30 +805,30 @@
     <!-- Counter -->
     <section class="counter-section">
         <div class="container">
-            <p class="section-tag" style="text-align:center">By the numbers</p>
-            <h2 class="section-title aos" style="text-align:center;color:white">Us, quantified</h2>
-            <p class="section-desc aos" style="text-align:center;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.5)">Because I'm a data person. You already knew that. (Yes, I made a dashboard for our relationship. No, I'm not sorry.)</p>
+            <p class="section-tag" style="text-align:center">आकड्यांमध्ये</p>
+            <h2 class="section-title aos" style="text-align:center;color:white">आपण, quantified</h2>
+            <p class="section-desc aos" style="text-align:center;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.5)">कारण मी data वाला माणूस आहे. तुला माहीत आहे. (हो, मी आपल्या relationship चा dashboard बनवला. नाही, मला sorry नाही.)</p>
 
             <div class="counter-grid aos">
                 <div>
                     <div class="counter-number" id="cTogether">4</div>
-                    <div class="counter-label">Years together</div>
+                    <div class="counter-label">वर्षं एकत्र</div>
                 </div>
                 <div>
                     <div class="counter-number" id="cMarried">1</div>
-                    <div class="counter-label">Year married</div>
+                    <div class="counter-label">वर्ष लग्नाला</div>
                 </div>
                 <div>
                     <div class="counter-number" id="cDays">1,523</div>
-                    <div class="counter-label">Days of us</div>
+                    <div class="counter-label">दिवस आपले</div>
                 </div>
                 <div>
                     <div class="counter-number">&infin;</div>
-                    <div class="counter-label">More to come</div>
+                    <div class="counter-label">अजून बाकी</div>
                 </div>
                 <div>
                     <div class="counter-number">1</div>
-                    <div class="counter-label">Duvet (that you hog)</div>
+                    <div class="counter-label">Blanket (तू ओढतेस)</div>
                 </div>
             </div>
         </div>
@@ -850,42 +837,42 @@
     <!-- Promises -->
     <section class="promises-section">
         <div class="container">
-            <p class="section-tag">Looking ahead</p>
-            <h2 class="section-title aos">What I promise you</h2>
-            <p class="section-desc aos">Not just today. Every day after this one too.</p>
+            <p class="section-tag">पुढे बघताना</p>
+            <h2 class="section-title aos">मी तुला काय वचन देतो</h2>
+            <p class="section-desc aos">फक्त आज नाही. यानंतरच्या प्रत्येक दिवशी पण.</p>
 
             <ul class="promise-list">
                 <li class="promise-item">
                     <span class="promise-dot"></span>
-                    <span>I'll choose you every single day. The easy ones and the hard ones. Especially the hard ones.</span>
+                    <span>मी तुला रोज निवडेन. सोप्या दिवशी आणि कठीण दिवशी. विशेषतः कठीण दिवशी.</span>
                 </li>
                 <li class="promise-item">
                     <span class="promise-dot"></span>
-                    <span>I'll be your safe place when everything else feels like too much. You can always come home to me.</span>
+                    <span>जेव्हा सगळं खूप जास्त वाटेल तेव्हा मी तुझी safe जागा असेन. तू नेहमी माझ्याकडे घरी येऊ शकतेस.</span>
                 </li>
                 <li class="promise-item">
                     <span class="promise-dot"></span>
-                    <span>I'll keep trying to make you laugh, even when the jokes are terrible. Especially when they're terrible.</span>
+                    <span>मी तुला हसवायचा प्रयत्न करत राहीन, jokes भयंकर असले तरी. विशेषतः जेव्हा भयंकर असतील.</span>
                 </li>
                 <li class="promise-item">
                     <span class="promise-dot"></span>
-                    <span>I'll match your chaos with patience, and your energy with presence. We balance each other out and I never want that to change.</span>
+                    <span>मी तुझ्या chaos ला patience ने आणि तुझ्या energy ला presence ने match करेन. आपण एकमेकांना balance करतो आणि मला ते कधी बदलायचं नाही.</span>
                 </li>
                 <li class="promise-item">
                     <span class="promise-dot"></span>
-                    <span>I'll pretend to enjoy the shows you pick. (I won't always succeed, but I'll try.)</span>
+                    <span>तू निवडलेले shows मी enjoy करतोय असं दाखवेन. (नेहमी जमणार नाही, पण try करेन.)</span>
                 </li>
                 <li class="promise-item">
                     <span class="promise-dot"></span>
-                    <span>I'll grow with you, not apart from you. Whatever comes next, we figure it out together.</span>
+                    <span>मी तुझ्यासोबत वाढेन, तुझ्यापासून दूर नाही. पुढे काहीही आलं तरी, आपण एकत्र सोडवू.</span>
                 </li>
                 <li class="promise-item">
                     <span class="promise-dot"></span>
-                    <span>I'll never bring up the fact that I was right about [redacted]. Even though I was. You know I was.</span>
+                    <span>मी [redacted] बद्दल बरोबर होतो हे कधी उगाच सांगणार नाही. जरी मी होतो. तुला माहीत आहे मी होतो.</span>
                 </li>
                 <li class="promise-item">
                     <span class="promise-dot"></span>
-                    <span>I'll love you more tomorrow than I do today. And even more the day after that. That's not a cliche, it's just how it works with you.</span>
+                    <span>उद्या मी तुझ्यावर आजपेक्षा जास्त प्रेम करेन. आणि परवा त्याहून जास्त. हे cliche नाही, तुझ्यासोबत असंच होतं.</span>
                 </li>
             </ul>
         </div>
@@ -895,29 +882,29 @@
     <section class="final-section">
         <div class="final-inner">
             <div class="final-heart">&#10084;</div>
-            <h2 class="final-message">Happy anniversary,<br><span class="accent">Sofia</span></h2>
+            <h2 class="final-message">वाढदिवसाच्या शुभेच्छा,<br><span class="accent">सोफिया</span></h2>
             <p class="final-sub">
-                You're my favourite person. My best friend. The most beautifully chaotic human I've ever known. The one I want next to me on the tube, on the sofa, and everywhere in between. (Even when you take up 80% of the sofa. I've measured.)
+                तू माझी सगळ्यात आवडती व्यक्ती आहेस. माझी best friend. मी भेटलेली सगळ्यात सुंदर chaotic माणूस. Tube वर, sofa वर, आणि मध्ये सगळीकडे माझ्या शेजारी हवी असलेली ती. (तू sofa चा ८०% घेतेस तेव्हाही. मी मोजलंय.)
                 <br><br>
-                Here's to year two of marriage. Year five of us. And every year after that.
+                लग्नाच्या दुसऱ्या वर्षासाठी cheers. आपल्या पाचव्या वर्षासाठी. आणि त्यानंतरच्या प्रत्येक वर्षासाठी.
             </p>
-            <p class="final-date">14 &middot; 12 &middot; 2021 &rarr; Forever</p>
+            <p class="final-date">१४ &middot; १२ &middot; २०२१ &rarr; कायमचं</p>
         </div>
     </section>
 
     <!-- Fine Print -->
     <footer class="fine-print">
         <div class="container">
-            <p class="fine-print-title">The fine print</p>
+            <p class="fine-print-title">अटी व शर्ती</p>
             <ul class="fine-print-list">
-                <li>This website was built with genuine love and a concerning amount of caffeine.</li>
-                <li>No refunds on the marriage. You're stuck with me. Sorry about that.</li>
-                <li>The "days together" counter above is accurate. I checked. Twice.</li>
-                <li>Any resemblance to a well-adjusted, emotionally articulate husband is purely coincidental.</li>
-                <li>The duvet situation remains unresolved and is under ongoing review.</li>
-                <li>I reserve the right to reference this website in future arguments as proof that I am, in fact, romantic.</li>
+                <li>ही website खऱ्या प्रेमाने आणि भयंकर जास्त चहा पिऊन बनवली आहे.</li>
+                <li>लग्नावर refund नाही. तू माझ्यासोबत अडकली आहेस. Sorry.</li>
+                <li>वरचा "दिवस एकत्र" counter बरोबर आहे. मी check केलं. दोनदा.</li>
+                <li>एक well-adjusted, emotionally articulate नवरा यांच्याशी कोणतंही साम्य हा पूर्णपणे योगायोग आहे.</li>
+                <li>Blanket चा प्रश्न अजून सुटलेला नाही आणि ongoing review मध्ये आहे.</li>
+                <li>भविष्यातल्या भांडणांमध्ये मी romantic आहे याचा पुरावा म्हणून ही website वापरण्याचा अधिकार मी राखून ठेवतो.</li>
             </ul>
-            <p class="fine-print-footer">Made with &#10084; by your husband, who should probably be sleeping right now.</p>
+            <p class="fine-print-footer">तुझ्या नवऱ्याने &#10084; ने बनवलं, ज्याने आत्ता बहुतेक झोपायला हवं होतं.</p>
         </div>
     </footer>
 
